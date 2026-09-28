@@ -1,0 +1,5 @@
+name: autark-provider
+kind: model-provider
+version: 1.0.0
+description: Autark — routed agent/pro/deep contracts with a 1M context window
+author: Antti Pasila (@apasilacyans)
