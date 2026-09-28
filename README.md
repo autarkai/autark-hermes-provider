@@ -21,7 +21,7 @@ window is correct the moment you connect.
 ## Install
 
 ```bash
-git clone https://github.com/apasilacyans/autark-hermes-provider \
+git clone https://github.com/autarkai/autark-hermes-provider \
   ~/.hermes/plugins/model-providers/autark
 ```
 
@@ -62,6 +62,19 @@ bug the plugin exists to prevent.
 - Hermes Agent with the `model-providers` plugin surface (the `providers` module
   and `plugins/model-providers/` discovery).
 - An Autark API key from <https://autark.ai/>.
+
+## Development
+
+The tests import `providers` and `agent.model_metadata` from a Hermes checkout,
+so they must run **from that checkout** (not from this repo's directory):
+
+```bash
+cd /path/to/hermes-agent
+./venv/bin/python -m pytest /path/to/autark-hermes-provider/tests/test_profile.py -q
+```
+
+Running them from inside this repo fails with `ModuleNotFoundError: agent` —
+that is a working-directory issue, not a broken test.
 
 ## License
 
