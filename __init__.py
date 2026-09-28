@@ -44,7 +44,7 @@ CONTRACTS: tuple[str, ...] = (
 
 
 class AutarkProfile(ProviderProfile):
-    """Autark — routed contracts behind one OpenAI-compatible endpoint."""
+    """Autark: agent, pro and deep contracts behind one OpenAI-compatible endpoint."""
 
     def get_model_context_length(self, model: str) -> int | None:
         """Return the contract's window, or None to let the normal chain run.
@@ -62,7 +62,7 @@ autark = AutarkProfile(
     name="autark",
     aliases=("autark-ai",),
     display_name="Autark",
-    description="Autark — routed agent/pro/deep contracts (1M context)",
+    description="Autark: agent, pro and deep contracts (1M context)",
     signup_url="https://autark.ai/",
     env_vars=("AUTARK_API_KEY", "AUTARK_BASE_URL"),
     base_url=AUTARK_BASE_URL,
